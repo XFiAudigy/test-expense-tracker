@@ -16,8 +16,8 @@ export const GlobalContext = createContext(initState);
 
 // Provider component
 export const GlobalProvider = ({ children }) => {
-   //state[0] is the context data, state[1] is the dispatch function
-   const reducerData = useReducer(AppReducer, initState); //note: transactions is from the initState
+   //reducerData[0] is the context data, reducerData[1] is the dispatch function
+   const reducerData = useReducer(AppReducer, initState);
    const state = reducerData[0];
    const dispatch = reducerData[1];
 

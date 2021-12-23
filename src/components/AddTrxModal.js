@@ -4,15 +4,8 @@ import Modal from 'react-modal';
 import { MdClose } from "react-icons/md";
 
 export const AddTrxModal = (props) => {
-
-   /**
-    * - add popup here
-    * - add button to toggle popup
-    * - need redux to update data state, or use context API
-    */
-
    const { transactions, addTrx } = useContext(GlobalContext);
-   const [text, setText] = useState(''); //either use this or make a react component
+   const [text, setText] = useState(''); //either use this or make a react class component
    const [amount, setAmount] = useState(0);
    const [modalIsOpen, setIsOpen] = useState(false);
    const [showError, setErrorFlag] =  useState(false);
@@ -64,7 +57,7 @@ export const AddTrxModal = (props) => {
    }
 
    function afterOpenModal() {
-      // references are now sync'd and can be accessed. do after
+      
    }
 
    function closeModal() {
@@ -75,7 +68,6 @@ export const AddTrxModal = (props) => {
    return (
       <div>
          <button onClick={openModal} className="btn">Add transaction</button>
-         {/* <Popup trigger={<button className="btn">Add transaction</button>} position="center center"> */}
          <Modal
             isOpen={modalIsOpen}
             onAfterOpen={afterOpenModal}
@@ -108,7 +100,6 @@ export const AddTrxModal = (props) => {
                <button className="btn">Submit</button>
             </form>
          </Modal>
-         {/* </Popup> */}
       </div>
    )
 }
